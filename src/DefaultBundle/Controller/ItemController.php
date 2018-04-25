@@ -85,7 +85,7 @@ class ItemController extends Controller
     /**
      * Lists all item entities.
      *
-     * @Route("/list", name="CRUD_list")
+     * @Route("/list", name="item_list")
      * @Method("GET")
      */
     public function listAction(Request $request)
