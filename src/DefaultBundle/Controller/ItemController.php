@@ -7,6 +7,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Serializer;
+use Symfony\Component\Serializer\Encoder\JsonEncoder;
+use Symfony\Component\Serializer\Normalizer\ArrayDenormalizer;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
 
 /**
  * Item controller.
@@ -15,6 +19,52 @@ use Symfony\Component\HttpFoundation\Request;
  */
 class ItemController extends Controller
 {
+    /**
+     * Creates a new item entity.
+     *
+     * @Route("/json", name="JSON")
+     */
+    public function DeSerializeAction()
+    {
+        $encoders = array(new JsonEncoder());
+        $normalizers = array(new ObjectNormalizer(), new ArrayDenormalizer());
+
+        $serializer = new Serializer($normalizers, $encoders);
+
+        $ch = curl_init();
+
+        // set url
+        curl_setopt($ch, CURLOPT_URL, "https://gist.githubusercontent.com/emodus/27d245484a85c2286722b9d146c53354/raw/c9af224580a22cbde969127527c4500e3f7d2a9e/dummyFeed");
+
+        //return the transfer as a string
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+
+        // $output contains the output string
+        $data = curl_exec($ch);
+
+        // close curl resource to free up system resources
+        curl_close($ch);
+
+
+
+        $data = json_decode($data);
+        $data = json_encode($data->items);
+
+        $items = $serializer->deserialize($data,'DefaultBundle\Entity\Item[]', 'json');
+        $em = $this->getDoctrine()->getManager();
+        foreach($items as $item=>$item_value)
+        {
+            if($item_value->getBool() == "true")
+                $item_value->setBool("1");
+            else
+                $item_value->setBool("0");
+            $em->persist($item_value);
+            $em->flush();
+        }
+
+        return $this->render('item/json.html.twig', array(
+        ));
+    }
     /**
      * Lists all item entities.
      *

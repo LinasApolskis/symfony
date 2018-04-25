@@ -15,9 +15,8 @@ class Item
     /**
      * @var int
      *
-     * @ORM\Column(name="index", type="integer")
+     * @ORM\Column(name="`index`", type="integer")
      * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $index;
 
@@ -31,14 +30,14 @@ class Item
     /**
      * @var int
      *
-     * @ORM\Column(name="integer", type="integer")
+     * @ORM\Column(name="`integer`", type="integer")
      */
     private $integer;
 
     /**
      * @var float
      *
-     * @ORM\Column(name="float", type="float")
+     * @ORM\Column(name="`float`", type="float")
      */
     private $float;
 
@@ -73,7 +72,7 @@ class Item
     /**
      * @var bool
      *
-     * @ORM\Column(name="bool", type="boolean")
+     * @ORM\Column(name="`bool`", type="boolean")
      */
     private $bool;
 
@@ -89,11 +88,11 @@ class Item
     }
 
     /**
-     * Set indexas
+     * Set index
      *
-     * @param integer $indexas
+     * @param integer $index
      *
-     * @return Item
+     * @return int
      */
     public function setIndex($index)
     {
@@ -107,7 +106,7 @@ class Item
      *
      * @param integer $index_start_at
      *
-     * @return Item
+     * @return int
      */
     public function setIndexStartAt($index_start_at)
     {
@@ -131,7 +130,7 @@ class Item
      *
      * @param integer $integer
      *
-     * @return Item
+     * @return int
      */
     public function setInteger($integer)
     {
@@ -275,7 +274,8 @@ class Item
      *
      * @param boolean $bool
      *
-     * @return boolean
+     * @return bool
+     *
      */
     public function setBool($bool)
     {
