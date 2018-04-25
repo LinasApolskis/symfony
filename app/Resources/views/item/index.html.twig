@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Items list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Index</th>
+                <th>Index_start_at</th>
+                <th>Integer</th>
+                <th>Float</th>
+                <th>Name</th>
+                <th>Surname</th>
+                <th>Fullname</th>
+                <th>Email</th>
+                <th>Bool</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td><a href="{{ path('item_show', { 'index': item.index }) }}">{{ item.index }}</a></td>
+                <td>{{ item.indexstartat }}</td>
+                <td>{{ item.integer }}</td>
+                <td>{{ item.float }}</td>
+                <td>{{ item.name }}</td>
+                <td>{{ item.surname }}</td>
+                <td>{{ item.fullname }}</td>
+                <td>{{ item.email }}</td>
+                <td>{% if item.bool %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('item_show', { 'index': item.index }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('item_edit', { 'index': item.index }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('item_new') }}">Create a new item</a>
+        </li>
+    </ul>
+{% endblock %}
