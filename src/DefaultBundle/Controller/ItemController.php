@@ -33,6 +33,29 @@ class ItemController extends Controller
     }
 
     /**
+     * Lists all item entities.
+     *
+     * @Route("/list", name="CRUD_list")
+     * @Method("GET")
+     */
+    public function listAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $dql   = "SELECT a FROM DefaultBundle:Item a";
+        $query = $em->createQuery($dql);
+
+        $paginator  = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $query, /* query NOT result */
+            $request->query->getInt('page', 1)/*page number*/,
+            25/*limit per page*/
+        );
+
+        // parameters to template
+        return $this->render('item/list.html.twig', array('pagination' => $pagination));
+    }
+
+    /**
      * Creates a new item entity.
      *
      * @Route("/new", name="item_new")

@@ -1,0 +1,35 @@
+{# total items count #}
+<div class="count">
+    {{ pagination.getTotalItemCount }}
+</div>
+<table>
+
+    {# table body #}
+    {% for item in pagination %}
+        <tr>
+            <td><a href="{{ path('item_show', { 'index': item.index }) }}">{{ item.index }}</a></td>
+            <td>{{ item.indexstartat }}</td>
+            <td>{{ item.integer }}</td>
+            <td>{{ item.float }}</td>
+            <td>{{ item.name }}</td>
+            <td>{{ item.surname }}</td>
+            <td>{{ item.fullname }}</td>
+            <td>{{ item.email }}</td>
+            <td>{% if item.bool %}Yes{% else %}No{% endif %}</td>
+            <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('item_show', { 'index': item.index }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('item_edit', { 'index': item.index }) }}">edit</a>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+{# display navigation #}
+<div class="navigation">
+    {{ knp_pagination_render(pagination) }}
+</div>
