@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2492b50c-8c0b-4b33-b630-1f80dbf2e293" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/default/index.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/item/edit.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/item/edit.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/item/list.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/item/list.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/item/new.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/item/new.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/item/show.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/item/show.html.twig" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
-      <change beforePath="$PROJECT_DIR$/src/DefaultBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/DefaultBundle/Controller/DefaultController.php" />
-      <change beforePath="$PROJECT_DIR$/src/DefaultBundle/Controller/ItemController.php" afterPath="$PROJECT_DIR$/src/DefaultBundle/Controller/ItemController.php" />
-    </list>
+    <list default="true" id="2492b50c-8c0b-4b33-b630-1f80dbf2e293" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -96,7 +84,7 @@
         <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="238">
-              <caret line="14" column="155" lean-forward="false" selection-start-line="14" selection-start-column="155" selection-end-line="14" selection-end-column="155" />
+              <caret line="14" column="81" lean-forward="false" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
               <folding>
                 <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
@@ -399,12 +387,12 @@
       <option name="presentableId" value="Default" />
       <updated>1524648051894</updated>
       <workItem from="1524648053298" duration="3681000" />
-      <workItem from="1524651760335" duration="15542000" />
+      <workItem from="1524651760335" duration="15853000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19223000" />
+    <option name="totallyTimeSpent" value="19534000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -672,7 +660,7 @@
     <entry file="file://$PROJECT_DIR$/app/Resources/views/default/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
-          <caret line="14" column="155" lean-forward="false" selection-start-line="14" selection-start-column="155" selection-end-line="14" selection-end-column="155" />
+          <caret line="14" column="81" lean-forward="false" selection-start-line="14" selection-start-column="81" selection-end-line="14" selection-end-column="81" />
           <folding>
             <element signature="e#12#26#0#Twig" expanded="true" />
           </folding>
